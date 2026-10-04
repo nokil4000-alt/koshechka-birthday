@@ -8,17 +8,42 @@
 <meta http-equiv="Expires" content="0">
 <title>Для моей Кошечки ♡</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(145deg,#fff1f7,#f6c8df);color:#694356;font-family:Georgia,serif;min-height:100vh}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 15% 10%,rgba(255,255,255,.9) 0 12%,transparent 30%),radial-gradient(circle at 90% 80%,rgba(220,203,231,.55),transparent 32%),linear-gradient(145deg,#fff8fa 0%,#f8e1eb 48%,#eadff0 100%);color:#5d465e;font-family:Georgia,serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(212,174,198,.18) 1px,transparent 1px);background-size:28px 28px;opacity:.35}
 .cover{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-.cover-box,.card{width:min(92%,680px);background:rgba(255,255,255,.9);border-radius:30px;box-shadow:0 18px 55px rgba(150,75,110,.2)}
-.cover-box{text-align:center;padding:48px 24px}.cover h1{color:#a54f7c;font-size:30px;margin:0 0 28px}.open{border:0;border-radius:999px;padding:17px 35px;font:700 18px Georgia;color:white;background:linear-gradient(135deg,#d98bb1,#b85d8c);box-shadow:0 8px 22px #c58baa;cursor:pointer}.hint{margin-top:18px;color:#c47b9d}
-.page{display:none}.card{margin:20px auto;padding:28px 20px 35px}.title{text-align:center;color:#a54f7c;font-size:30px}.text{font-size:18px;line-height:1.75;margin:18px 4px}.intro{text-align:center;font-size:18px;line-height:1.7}.divider{text-align:center;color:#d884ae;font-size:25px;margin:22px}.star-message{text-align:center;margin:28px 4px;padding:20px 14px;border-radius:24px;background:linear-gradient(135deg,rgba(255,238,247,.9),rgba(255,255,255,.75));color:#9c416f;font-size:18px;line-height:1.7;box-shadow:0 8px 24px rgba(150,75,110,.1)}.star-message .stars{color:#d884ae;font-size:22px;letter-spacing:7px;margin:5px 0 10px}.end{text-align:center;color:#9c416f;font-size:20px;line-height:1.7;margin-top:28px}.photos{margin-top:34px;border-top:1px solid #f0c2d7;padding-top:20px}.photos-title{text-align:center;color:#a54f7c;font-size:21px;margin-bottom:18px}.photo{margin:18px auto;padding:8px;max-width:94%;border-radius:22px;background:linear-gradient(135deg,#fff,#efa5c7,#fff);box-shadow:0 9px 25px rgba(137,67,99,.18)}.photo img{display:block;width:100%;border-radius:16px}.small{text-align:center;color:#c47b9d;margin-top:22px}.fly{position:fixed;bottom:-30px;color:#e59abb;pointer-events:none;z-index:20;animation:fly 6s ease-out forwards}@keyframes fly{to{transform:translateY(-115vh) translateX(var(--x)) rotate(var(--r));opacity:0}}
+.cover-box,.card{width:min(92%,680px);background:rgba(255,250,252,.88);border:1px solid rgba(210,177,198,.5);border-radius:32px;box-shadow:0 20px 65px rgba(110,76,106,.16);backdrop-filter:blur(8px)}
+.cover-box{text-align:center;padding:52px 24px;position:relative;overflow:hidden}
+.cover-box:before,.cover-box:after{content:"✦";position:absolute;color:#c9a56a;font-size:26px;opacity:.7}
+.cover-box:before{top:22px;left:28px}.cover-box:after{right:30px;bottom:24px}
+.cover h1{color:#9b6f8f;font-size:30px;margin:0 0 28px}
+.open{border:1px solid rgba(183,132,160,.45);border-radius:999px;padding:17px 35px;font:700 18px Georgia;color:#fffafc;background:linear-gradient(135deg,#d9a9c1,#ad87ae);box-shadow:0 10px 25px rgba(170,124,157,.3);cursor:pointer;transition:.25s}
+.open:hover{transform:translateY(-2px);box-shadow:0 13px 30px rgba(170,124,157,.4)}
+.hint{margin-top:18px;color:#a987a8}
+.page{display:none}.card{margin:20px auto;padding:30px 20px 38px}
+.title{text-align:center;color:#966c8b;font-size:30px}
+.text{font-size:18px;line-height:1.78;margin:18px 4px}
+.intro{text-align:center;font-size:18px;line-height:1.75;color:#684f68}
+.divider{text-align:center;color:#c5a067;font-size:25px;margin:24px}
+.star-message{text-align:center;margin:30px 4px;padding:22px 14px;border-radius:26px;background:linear-gradient(135deg,rgba(249,231,240,.92),rgba(237,229,243,.9));border:1px solid rgba(196,161,190,.45);color:#765772;font-size:18px;line-height:1.75;box-shadow:0 10px 28px rgba(111,78,107,.1)}
+.star-message .stars{color:#c9a15d;font-size:22px;letter-spacing:7px;margin:5px 0 10px;text-shadow:0 0 9px rgba(201,161,93,.28)}
+.end{text-align:center;color:#765772;font-size:20px;line-height:1.75;margin-top:30px}
+.photos{margin-top:36px;border-top:1px solid rgba(177,139,169,.35);padding-top:22px}
+.photos-title{text-align:center;color:#966c8b;font-size:21px;margin-bottom:18px}
+.photo{margin:20px auto;padding:9px;max-width:94%;border-radius:25px;background:linear-gradient(135deg,#fffdfd,#d8bfd9 45%,#caa46b 72%,#fffdfd);box-shadow:0 12px 30px rgba(105,75,103,.17);position:relative}
+.photo:before{content:"✧";position:absolute;top:-12px;right:12px;color:#c9a15d;font-size:22px}
+.photo img{display:block;width:100%;border-radius:18px}
+.small{text-align:center;color:#a987a8;margin-top:24px}
+.fly{position:fixed;bottom:-30px;color:#d3a0ba;pointer-events:none;z-index:20;animation:fly 6s ease-out forwards}
+@keyframes fly{to{transform:translateY(-115vh) translateX(var(--x)) rotate(var(--r));opacity:0}}
+@media(max-width:480px){.card{margin:10px auto;padding:25px 16px 32px}.title{font-size:27px}.text,.intro{font-size:17px}.cover h1{font-size:27px}.open{font-size:17px;padding:16px 29px}}
 </style>
 </head>
 <body>
 <section class="cover" id="cover"><div class="cover-box">
 <h1>У меня для тебя кое-что есть ♡</h1>
-<button class="open" onclick="openGift()">Нажми на меня 💗</button>
+<button class="open" onclick="openGift()">Нажми на меня ♡</button>
 <div class="hint">Для моей любимой Кошечки</div>
 </div></section>
 
@@ -26,7 +51,7 @@
 <h1 class="title">Любимая моя Кошечка ♡</h1>
 <p class="intro">Я поздравляю тебя с днём рождения!<br>19 лет назад появилось настоящее чудо — это ты.</p>
 <p class="text">Никогда не встречал прекраснее тебя. Ты только одна такая во всей галактике. Для меня ты не просто самая красивая девушка — ты человек, который стал для меня целым миром.</p>
-<div class="divider">✧ ♡ ✧</div>
+<div class="divider">✦ ✧ ⋆ ✧ ✦</div>
 <p class="text">И когда ты родилась, на тебя светили все звёздочки и любовались тобой. ✨ Мне кажется, они уже тогда знали, какой особенной ты станешь.</p>
 <p class="text">Ты самая прекрасная и любимая. Ты своим чудом, теплом и любовью окружила меня, и я отдал тебе своё сердечко. ♡</p>
 <p class="text">Рядом с тобой мне хочется улыбаться, мечтать и верить в наше будущее. Я хочу, чтобы впереди у нас было ещё очень много счастливых моментов, объятий, поцелуев и воспоминаний, которые будут только нашими.</p>
@@ -39,7 +64,7 @@
 <p class="small">С любовью, твой майский цветочек ♡</p>
 </main></section>
 <script>
-function heart(){const s=document.createElement("span");s.className="fly";s.textContent=["♡","♡","✧","❀"][Math.floor(Math.random()*4)];s.style.left=(5+Math.random()*90)+"vw";s.style.setProperty("--x",(Math.random()*180-90)+"px");s.style.setProperty("--r",(Math.random()*80-40)+"deg");s.style.fontSize=(14+Math.random()*22)+"px";document.body.appendChild(s);setTimeout(()=>s.remove(),7000)}
+function heart(){const s=document.createElement("span");s.className="fly";s.textContent=["♡","♡","✧","⋆"][Math.floor(Math.random()*4)];s.style.left=(5+Math.random()*90)+"vw";s.style.setProperty("--x",(Math.random()*180-90)+"px");s.style.setProperty("--r",(Math.random()*80-40)+"deg");s.style.fontSize=(14+Math.random()*22)+"px";document.body.appendChild(s);setTimeout(()=>s.remove(),7000)}
 function openGift(){document.getElementById("cover").style.display="none";document.getElementById("page").style.display="block";for(let i=0;i<20;i++)setTimeout(heart,i*90);setInterval(heart,500)}
 </script>
 </body></html>
