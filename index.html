@@ -38,6 +38,22 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .fly{position:fixed;bottom:-30px;color:#d3a0ba;pointer-events:none;z-index:20;animation:fly 6s ease-out forwards}
 @keyframes fly{to{transform:translateY(-115vh) translateX(var(--x)) rotate(var(--r));opacity:0}}
 @media(max-width:480px){.card{margin:10px auto;padding:25px 16px 32px}.title{font-size:27px}.text,.intro{font-size:17px}.cover h1{font-size:27px}.open{font-size:17px;padding:16px 29px}}
+
+.star-wishes{margin:38px 0 10px;padding:24px 12px;text-align:center;border-radius:28px;background:linear-gradient(135deg,rgba(255,250,253,.88),rgba(237,229,243,.8));border:1px solid rgba(196,161,190,.38)}
+.wishes-title{font-size:25px;color:#80506f;font-weight:600;margin-bottom:8px}
+.wishes-hint{font-size:16px;color:#8c6b85;margin-bottom:18px}
+.stars-area{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.wish-star{width:52px;height:52px;border:0;border-radius:50%;background:transparent;color:#c9a15d;font-size:30px;cursor:pointer;transition:transform .25s,filter .25s;touch-action:manipulation}
+.wish-star:active{transform:scale(1.18);filter:drop-shadow(0 0 8px rgba(201,161,93,.55))}
+.wish-text{min-height:30px;margin:18px 4px 0;color:#6b3f5a;font-size:19px;font-weight:600;line-height:1.5}
+.final-screen{margin-top:38px;padding:38px 18px 34px;text-align:center;border-radius:30px;background:linear-gradient(160deg,rgba(244,232,242,.95),rgba(225,218,237,.95));border:1px solid rgba(180,146,175,.42);position:relative;overflow:hidden}
+.final-screen:before,.final-screen:after{content:"✦";position:absolute;color:#c9a15d;font-size:30px;opacity:.75}
+.final-screen:before{top:16px;left:22px}.final-screen:after{right:22px;bottom:16px}
+.final-star{font-size:38px;color:#c9a15d;text-shadow:0 0 16px rgba(201,161,93,.45);margin-bottom:12px}
+.final-screen h2{margin:0;color:#80506f;font-size:31px;font-weight:600}
+.final-screen p{color:#6b3f5a;font-size:20px;line-height:1.7;margin:18px auto 0;max-width:560px}
+.final-love{margin-top:22px!important;font-weight:700;font-size:22px!important}
+@media(max-width:480px){.wishes-title{font-size:23px}.wish-star{width:48px;height:48px;font-size:27px}.wish-text{font-size:18px}.final-screen h2{font-size:28px}.final-screen p{font-size:19px}}
 </style>
 </head>
 <body>
@@ -57,14 +73,34 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 <p class="text">Рядом с тобой мне хочется улыбаться, мечтать и верить в наше будущее. Я хочу, чтобы впереди у нас было ещё очень много счастливых моментов, объятий, поцелуев и воспоминаний, которые будут только нашими.</p>
 <p class="text">Знай, что ты единственная, самая прекрасная и любимая. И как бы далеко мы сейчас ни были друг от друга, моё сердце всегда рядом с тобой.</p>
 <div class="star-message"><div class="stars">✦ ✧ ⋆ ✧ ✦</div><p>Говорят, во Вселенной миллиарды звёзд.<br>Но мне повезло встретить именно свою.<br><b>И это ты, моя Кошечка. ♡</b></p><div class="stars">✦ ⋆ ✧ ⋆ ✦</div></div><p class="end"><b>Я люблю тебя. ♡</b><br><br>И я верю, что скоро мы будем вместе. Я очень жду того дня, когда смогу просто обнять тебя и больше никуда не отпускать.<br><br><b>Ты мой мир. Ты моё самое любимое чудо. ♡</b></p>
+<section class="star-wishes">
+<div class="wishes-title">Загадай желание и нажми на звёздочку ✦</div>
+<div class="wishes-hint">У каждой звёздочки есть маленькое пожелание для тебя</div>
+<div class="stars-area">
+<button class="wish-star" type="button" data-wish="Пусть каждый твой день будет наполнен улыбками и счастьем. ♡" aria-label="Открыть пожелание">✦</button>
+<button class="wish-star" type="button" data-wish="Пусть все твои самые красивые мечты обязательно сбудутся. ✧" aria-label="Открыть пожелание">✦</button>
+<button class="wish-star" type="button" data-wish="Пусть рядом всегда будут тепло, любовь и люди, которые тебя любят. ♡" aria-label="Открыть пожелание">✦</button>
+<button class="wish-star" type="button" data-wish="Пусть впереди нас ждёт ещё очень много счастливых моментов вместе. ✨" aria-label="Открыть пожелание">✦</button>
+<button class="wish-star" type="button" data-wish="А моё самое главное желание — чтобы мы скорее были рядом. ♡" aria-label="Открыть пожелание">✦</button>
+</div>
+<div class="wish-text" aria-live="polite">Нажми на любую звёздочку ♡</div>
+</section>
 <section class="photos"><div class="photos-title">Наши моменты ♡</div>
 <div class="photo"><img src="images/photo1.jpg" alt="Наше фото"></div>
 <div class="photo"><img src="images/photo2.jpg" alt="Наше фото"></div>
 <div class="photo"><img src="images/photo3.jpg" alt="Наше фото"></div></section>
+<div class="final-screen">
+<div class="final-star">✦</div>
+<h2>С днём рождения,<br>моя Кошечка ♡</h2>
+<p>Если бы мне дали выбрать одну звезду во всей Вселенной — я бы снова выбрал тебя.</p>
+<p>Загадай желание.<br>А я уже загадал своё — чтобы мы скорее были вместе. ♡</p>
+<p class="final-love">Ты моё самое любимое чудо.<br>Я люблю тебя. ♡</p>
+</div>
 <p class="small">С любовью, твой майский цветочек ♡</p>
 </main></section>
 <script>
 function heart(){const s=document.createElement("span");s.className="fly";s.textContent=["♡","♡","✧","⋆"][Math.floor(Math.random()*4)];s.style.left=(5+Math.random()*90)+"vw";s.style.setProperty("--x",(Math.random()*180-90)+"px");s.style.setProperty("--r",(Math.random()*80-40)+"deg");s.style.fontSize=(14+Math.random()*22)+"px";document.body.appendChild(s);setTimeout(()=>s.remove(),7000)}
+document.querySelectorAll(".wish-star").forEach(star=>star.addEventListener("click",()=>{document.querySelector(".wish-text").textContent=star.dataset.wish;for(let i=0;i<4;i++)setTimeout(heart,i*100)}));
 function openGift(){document.getElementById("cover").style.display="none";document.getElementById("page").style.display="block";for(let i=0;i<20;i++)setTimeout(heart,i*90);setInterval(heart,500)}
 </script>
 </body></html>
