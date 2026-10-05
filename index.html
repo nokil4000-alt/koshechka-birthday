@@ -12,9 +12,9 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:radial-gradient(circle at 12% 8%,rgba(255,255,255,.95) 0 10%,transparent 28%),radial-gradient(circle at 88% 22%,rgba(246,210,228,.72),transparent 34%),radial-gradient(circle at 78% 88%,rgba(217,216,236,.82),transparent 36%),radial-gradient(circle at 20% 82%,rgba(217,216,236,.48),transparent 32%),linear-gradient(135deg,#fff9fb 0%,#f9e1eb 32%,#f2ddeb 54%,#d9d8ec 78%,#e6dced 100%);color:#5d465e;font-family:Georgia,serif;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(212,174,198,.18) 1px,transparent 1px);background-size:28px 28px;opacity:.35}
-.cover{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.lemon-rain{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}.lemon{position:absolute;top:-60px;font-size:30px;cursor:pointer;pointer-events:auto;animation:lemonFall linear forwards;filter:drop-shadow(0 4px 5px rgba(90,70,50,.16));user-select:none}.lemon:active{transform:scale(1.35) rotate(20deg)}@keyframes lemonFall{to{transform:translate3d(var(--drift),110vh,0) rotate(var(--rot));opacity:.9}}.cover{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
 .cover-box,.card{width:min(92%,680px);background:rgba(255,250,252,.88);border:1px solid rgba(210,177,198,.5);border-radius:32px;box-shadow:0 20px 65px rgba(110,76,106,.16);backdrop-filter:blur(8px)}
-.cover-box{text-align:center;padding:52px 24px;position:relative;overflow:hidden}
+.cover-box{text-align:center;padding:52px 24px;position:relative;overflow:hidden;z-index:2}
 .cover-box:before,.cover-box:after{content:"✦";position:absolute;color:#c9a56a;font-size:26px;opacity:.7}
 .cover-box:before{top:22px;left:28px}.cover-box:after{right:30px;bottom:24px}
 .cover h1{color:#9b6f8f;font-size:30px;margin:0 0 28px}
@@ -57,7 +57,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 </style>
 </head>
 <body>
-<section class="cover" id="cover"><div class="cover-box">
+<section class="cover" id="cover"><div class="lemon-rain" id="lemonRain"></div><div class="cover-box">
 <h1>У меня для тебя кое-что есть ♡</h1>
 <button class="open" onclick="openGift()">Нажми на меня ♡</button>
 
@@ -114,6 +114,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 <script>
 function heart(){const s=document.createElement("span");s.className="fly";s.textContent=["♡","♡","✧","⋆"][Math.floor(Math.random()*4)];s.style.left=(5+Math.random()*90)+"vw";s.style.setProperty("--x",(Math.random()*180-90)+"px");s.style.setProperty("--r",(Math.random()*80-40)+"deg");s.style.fontSize=(14+Math.random()*22)+"px";document.body.appendChild(s);setTimeout(()=>s.remove(),7000)}
 document.querySelectorAll(".wish-star").forEach(star=>star.addEventListener("click",()=>{document.querySelector(".wish-text").textContent=star.dataset.wish;for(let i=0;i<4;i++)setTimeout(heart,i*100)}));
-function openGift(){document.getElementById("cover").style.display="none";document.getElementById("page").style.display="block";for(let i=0;i<20;i++)setTimeout(heart,i*90);setInterval(heart,500)}
+function lemonDrop(){const l=document.createElement("span");l.className="lemon";l.textContent="🍋";l.style.left=(Math.random()*96)+"%";l.style.setProperty("--drift",(Math.random()*180-90)+"px");l.style.setProperty("--rot",(Math.random()*540-270)+"deg");l.style.animationDuration=(4+Math.random()*4)+"s";l.addEventListener("click",()=>{l.style.transform="scale(1.5)";l.style.opacity="0";setTimeout(()=>l.remove(),250)});document.getElementById("lemonRain").appendChild(l);setTimeout(()=>l.remove(),8500)}for(let i=0;i<10;i++)setTimeout(lemonDrop,i*350);setInterval(lemonDrop,900);function openGift(){document.getElementById("cover").style.display="none";document.getElementById("page").style.display="block";for(let i=0;i<20;i++)setTimeout(heart,i*90);setInterval(heart,500)}
 </script>
 </body></html>
